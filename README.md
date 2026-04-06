@@ -20,7 +20,8 @@ Fitur utama:
 
 Berikut adalah representasi class diagram:
 
-<img width="1093" height="1660" alt="mermaid-diagram (1)" src="https://github.com/user-attachments/assets/fb91dcd4-cd95-4533-a153-ee2f2b2f8872" />
+<img width="1093" height="1660" alt="image" src="https://github.com/user-attachments/assets/c3494f4a-1874-4fee-87e2-7aff9368c537" />
+
 
 
 ---
