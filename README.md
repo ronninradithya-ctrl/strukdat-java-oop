@@ -39,10 +39,7 @@ class User {
 }
 
 class Pelanggan extends User {
-    List<Pemesanan> riwayatBooking = new ArrayList<>();
-
-    public void buatBooking(Pemesanan p) {
-        riwayatBooking.add(p);
+    public void buatBooking() {
         System.out.println("\nBooking berhasil dibuat!");
     }
 }
@@ -67,19 +64,13 @@ class Pemesanan {
     Lapangan lapangan;
     Jadwal jadwal;
     String status;
-    double totalHarga;
-
-    public void hitungTotal() {
-        totalHarga = lapangan.hargaPerJam * 2; // misal 2 jam
-    }
 
     public void tampilDetail() {
-        hitungTotal();
         System.out.println("\n=== DETAIL PEMESANAN ===");
         System.out.println("Nama: " + pelanggan.nama);
         System.out.println("Lapangan: " + lapangan.nama);
         System.out.println("Waktu: " + jadwal.jamMulai + " - " + jadwal.jamSelesai);
-        System.out.println("Total Harga: Rp " + totalHarga);
+        System.out.println("Harga/jam: Rp " + lapangan.hargaPerJam);
     }
 
     public void konfirmasi() {
@@ -94,9 +85,12 @@ class Pembayaran {
     String status;
 
     public void proses() {
-        jumlah = pemesanan.totalHarga;
+        jumlah = pemesanan.lapangan.hargaPerJam;
         status = "Lunas";
-        System.out.println("\nPembayaran sebesar Rp " + jumlah + " berhasil!");
+
+        System.out.println("\nPembayaran diproses");
+        System.out.println("Jumlah: Rp " + jumlah);
+        System.out.println("Status: " + status);
     }
 }
 
@@ -141,7 +135,7 @@ public class MainApp {
         String konfirmasi = input.nextLine();
 
         if (konfirmasi.equalsIgnoreCase("y")) {
-            pelanggan.buatBooking(p);
+            pelanggan.buatBooking();
             p.konfirmasi();
 
             Pembayaran bayar = new Pembayaran();
