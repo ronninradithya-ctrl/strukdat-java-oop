@@ -20,7 +20,7 @@ Fitur utama:
 
 Berikut adalah representasi class diagram:
 
-<img width="1093" height="1660" alt="image" src="https://github.com/user-attachments/assets/c3494f4a-1874-4fee-87e2-7aff9368c537" />
+<img width="2654" height="4190" alt="Futsal Booking System Model-2026-04-06-081923" src="https://github.com/user-attachments/assets/5207bd83-58e9-4f07-9d68-31fa2913154b" />
 
 
 
