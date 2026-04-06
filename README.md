@@ -154,36 +154,38 @@ public class MainApp {
 
 ---
 
-## Screenshot Output
+## Hasil Output
 
 Contoh hasil saat program dijalankan:
 
 ```
 === SISTEM BOOKING FUTSAL ===
-Masukkan nama anda: Ronnin
+Masukkan nama anda: ronnin
 
-Selamat datang, Ronnin!
+Selamat datang, ronnin!
 
 Pilih Lapangan:
 1. Lapangan A (Rp 100000.0)
 2. Lapangan B (Rp 120000.0)
 Pilihan (1/2): 1
 
-Masukkan jam mulai: 10:00
-Masukkan jam selesai: 12:00
+Masukkan jam mulai: 08.00
+Masukkan jam selesai: 09.00
 
 === DETAIL PEMESANAN ===
-Nama: Ronnin
+Nama: ronnin
 Lapangan: Lapangan A
-Waktu: 10:00 - 12:00
-Total Harga: Rp 120000.0
+Waktu: 08.00 - 09.00
+Harga/jam: Rp 100000.0
 
 Konfirmasi booking? (y/n): y
 
 Booking berhasil dibuat!
 Status: Dikonfirmasi
 
-Pembayaran sebesar Rp 120000.0 berhasil!
+Pembayaran diproses
+Jumlah: Rp 100000.0
+Status: Lunas
 
 Booking selesai. Terima kasih!
 ```
