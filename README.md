@@ -189,7 +189,7 @@ Konfirmasi booking? (y/n): y
 Booking berhasil dibuat!
 Status: Dikonfirmasi
 
-Pembayaran sebesar Rp 200000.0 berhasil!
+Pembayaran sebesar Rp 120000.0 berhasil!
 
 Booking selesai. Terima kasih!
 ```
