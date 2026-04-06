@@ -20,7 +20,7 @@ Fitur utama:
 
 Berikut adalah representasi class diagram:
 
-<img width="5644" height="8191" alt="Futsal Booking System Model-2026-04-01-065044" src="https://github.com/user-attachments/assets/401f5472-7d76-4c44-b43d-0d6b3c786e61" />
+<img width="1093" height="1660" alt="mermaid-diagram (1)" src="https://github.com/user-attachments/assets/fb91dcd4-cd95-4533-a153-ee2f2b2f8872" />
 
 
 ---
@@ -67,13 +67,19 @@ class Pemesanan {
     Lapangan lapangan;
     Jadwal jadwal;
     String status;
+    double totalHarga;
+
+    public void hitungTotal() {
+        totalHarga = lapangan.hargaPerJam * 2; // misal 2 jam
+    }
 
     public void tampilDetail() {
+        hitungTotal();
         System.out.println("\n=== DETAIL PEMESANAN ===");
         System.out.println("Nama: " + pelanggan.nama);
         System.out.println("Lapangan: " + lapangan.nama);
         System.out.println("Waktu: " + jadwal.jamMulai + " - " + jadwal.jamSelesai);
-        System.out.println("Harga/jam: Rp " + lapangan.hargaPerJam);
+        System.out.println("Total Harga: Rp " + totalHarga);
     }
 
     public void konfirmasi() {
@@ -83,8 +89,14 @@ class Pemesanan {
 }
 
 class Pembayaran {
-    public void bayar() {
-        System.out.println("\nPembayaran berhasil!");
+    Pemesanan pemesanan;
+    double jumlah;
+    String status;
+
+    public void proses() {
+        jumlah = pemesanan.totalHarga;
+        status = "Lunas";
+        System.out.println("\nPembayaran sebesar Rp " + jumlah + " berhasil!");
     }
 }
 
@@ -113,9 +125,9 @@ public class MainApp {
         input.nextLine();
 
         Jadwal jadwal = new Jadwal();
-        System.out.print("\nMasukkan jam mulai (contoh 10:00): ");
+        System.out.print("\nMasukkan jam mulai: ");
         jadwal.jamMulai = input.nextLine();
-        System.out.print("Masukkan jam selesai (contoh 12:00): ");
+        System.out.print("Masukkan jam selesai: ");
         jadwal.jamSelesai = input.nextLine();
 
         Pemesanan p = new Pemesanan();
@@ -133,7 +145,8 @@ public class MainApp {
             p.konfirmasi();
 
             Pembayaran bayar = new Pembayaran();
-            bayar.bayar();
+            bayar.pemesanan = p;
+            bayar.proses();
 
             System.out.println("\nBooking selesai. Terima kasih!");
         } else {
@@ -162,21 +175,21 @@ Pilih Lapangan:
 2. Lapangan B (Rp 120000.0)
 Pilihan (1/2): 1
 
-Masukkan jam mulai (contoh 10:00): 10:00
-Masukkan jam selesai (contoh 12:00): 12:00
+Masukkan jam mulai: 10:00
+Masukkan jam selesai: 12:00
 
 === DETAIL PEMESANAN ===
 Nama: Ronnin
 Lapangan: Lapangan A
 Waktu: 10:00 - 12:00
-Harga/jam: Rp 100000.0
+Total Harga: Rp 120000.0
 
 Konfirmasi booking? (y/n): y
 
 Booking berhasil dibuat!
 Status: Dikonfirmasi
 
-Pembayaran berhasil!
+Pembayaran sebesar Rp 200000.0 berhasil!
 
 Booking selesai. Terima kasih!
 ```
